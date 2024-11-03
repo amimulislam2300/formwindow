@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+    <form action="#" name="form">
+        Name: <br>
+        <input type="text" name="n"><br>
+        Email: <br>
+        <input type="text" name="email"><br>
+        Password: <br>
+        <input type="password" name="password"><br>
+        Adress: <br>
+
+        <textarea name="add" id=""></textarea> <br>
+        Gender: <br>
+        <input type="radio" name="male" value="male">Male
+        <input type="radio" name="male" value="Female">Female <br>
+
+        <label for="">Subject:</label>
+        <input type="checkbox" name="sub" id="" value="Bangla">
+        <label for="">Bangla</label>
+        <input type="checkbox" name="sub" id="" value="English">
+        <label for="">English</label>
+        <input type="checkbox" name="sub" id="" value="Math">
+        <label for="">Math</label><br> <br>
+
+        <input type="button" value="submit" onclick="my_f()">
+        <input type="reset" value="reset">
+    </form>
+    
+    <script>
+        function my_f() {
+            doc = open('', '', 'width=300px, height=400px');
+            var name = document.form.n.value;
+            var email = document.form.email.value;
+            var password = document.form.password.value;
+            var address = document.form.add.value;
+
+            var Gender = "";
+            for (i = 0; i < document.form.male.length; i++) {
+                if (document.form.male[i].checked) {
+                    Gender = document.form.male[i].value;
+                }
+            }
+
+            var subject = "";
+            for (i = 0; i < document.form.sub.length; i++) {
+                if (document.form.sub[i].checked) {
+                    subject += document.form.sub[i].value + " ";
+                }
+            }
+
+            with (doc.document) {
+                write("Name:" + name);
+                write("<br>");
+                write("Email:" + email);
+                write("<br>");
+                write("Password:" + password);
+                write("<br>");
+                write("Adress:" + address);
+                write("<br>");
+                write("Gender:" + Gender);
+                write("<br>");
+                write("Subject: " + subject);
+                write("<br>");
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
